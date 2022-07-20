@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: icharles
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/icharles-harbor-project/app@sha256:8a49cd4ca787ad67fce971ca04d14c4cefeeac3c8ded5665c81971d57672bd60
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/icharles-harbor-project/db@sha256:b850f1ea78f41608136332c7a8a3c39674373d76cad2ad73dc9f316021a97313
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
