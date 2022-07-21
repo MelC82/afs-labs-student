@@ -19,7 +19,7 @@ APIs: Edamam, Stripe, Google Maps Javascript & Geocoder
 ## Features
 
 - Users can view the list of all products, filter products by category and search products by name.
-
+Hello
 ![products page](https://github.com/Gerdie/farm-to-front-door/blob/master/static/img/products_page.jpg)
 
 - Users can add products to their shopping cart, edit their cart, and choose their delivery or pickup options.
